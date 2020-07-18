@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	>
+
+<head>
+<meta charset="UTF-8">
+<title>Main</title>
+</head>
+<body>
+	<div>
+		<h1>ALOHA CAMPUS</h1>
+		<a th:href="@{/board/list}">
+			<span>게시판</span>
+		</a>
+		<p th:text="${serverTime}">시간 표시</p>
+		
+	</div>
+</body>
+</html>
