@@ -39,8 +39,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<Board> search(String title) throws Exception {
-		return mapper.search(title);
+	public List<Board> search(String keyword) throws Exception {
+		return mapper.search(keyword);
 	}
 	
 	

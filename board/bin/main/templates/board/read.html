@@ -31,7 +31,7 @@
 </script>
 
 <body>
-	<h2>READ</h2>
+	<h2>글읽기</h2>
 	<form id="board" th:object="${board}" method="POST">
 		<input type="hidden" name="boardNo" th:field="*{boardNo}" />
 	
@@ -52,9 +52,9 @@
 	</form>	
 	
 	<div>
-		<button type="submit" id="btnModify">Modify</button>
-		<button type="submit" id="btnRemove">Remove</button>
-		<button type="submit" id="btnList">List</button>
+		<button type="submit" id="btnModify">수정</button>
+		<button type="submit" id="btnRemove">삭제</button>
+		<button type="submit" id="btnList">목록</button>
 	</div>
 </body>
 </html>

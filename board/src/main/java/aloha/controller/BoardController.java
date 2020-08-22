@@ -25,23 +25,19 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
-	public String  search(String title, Model model) throws Exception{
-		Board board = new Board();
-		board.setTitle(title);
+	public String  search(String keyword, Model model) throws Exception{
 		
-		model.addAttribute("board", board);
-		
-		model.addAttribute("list", service.search(title));
+		model.addAttribute("list", service.search(keyword));
 		
 		return "board/list";
 		
 	}
 	
-	
 	@RequestMapping(value = "register", method = RequestMethod.GET)
 	public void registerForm(Board board, Model model) throws Exception {
 		
 	}
+	
 	@RequestMapping(value = "register", method = RequestMethod.POST)
 	public String register(Board board, Model model) throws Exception {
 		service.register(board);
@@ -79,10 +75,6 @@ public class BoardController {
 		return "board/success";
 		
 	}
-	
-	
-		
-	
 }
 
 

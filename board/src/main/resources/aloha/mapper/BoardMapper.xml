@@ -33,7 +33,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="update">
 		UPDATE  board
 		   SET  title = #{title},
-		   		cotent = #{content},
+		   		content = #{content},
+		   		upd_date = now()
 		 WHERE  board_no = #{boardNo}
 	</update>	
 
@@ -48,7 +49,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				title,
 				content,
 				writer,
-				reg_date
+				reg_date,
+				upd_date
 		  FROM  board
 		 WHERE	board_no > 0
 	 ORDER BY  board_no DESC,
@@ -62,15 +64,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				title,
 				content,
 				writer,
-				reg_date
+				reg_date,
+				upd_date
 		FROM	board
 		WHERE 	board_no > 0
-		]]>
-		<if test="title != null and title != ''">
-			AND	title LIKE CONCAT('%', #{title}, '%')		
-		</if>		
+		AND (
+		          title LIKE CONCAT('%', #{keyword}, '%')
+		       OR writer LIKE CONCAT('%', #{keyword}, '%')
+		       OR content LIKE CONCAT('%', #{keyword}, '%')   
+	      	)		
 		ORDER BY board_no DESC,
 				 reg_date DESC	 
+		]]>
 	</select>
 	
 </mapper>

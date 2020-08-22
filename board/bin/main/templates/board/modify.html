@@ -25,7 +25,7 @@
 </script>
 
 <body>
-	<h2>MODIFY</h2>
+	<h2>글수정</h2>
 	
 	<form id="board" action="success.html" th:action="@{modify}" th:object="${board}" method="POST">
 		<input type="hidden" name="boardNo" th:field="*{boardNo}" />
@@ -50,8 +50,8 @@
 	</form>	
 	
 	<div>
-		<button type="submit" id="btnModify">Modify</button>
-		<button type="submit" id="btnList">List</button>
+		<button type="submit" id="btnModify">수정</button>
+		<button type="submit" id="btnList">목록</button>
 	</div>
 </body>
 </html>
