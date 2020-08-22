@@ -32,19 +32,16 @@
 		
 		<table>
 			<tr>
-				<td>Title</td>
+				<td>제목</td>
 				<td><input type="text" name="title" th:field="*{title}" /></td>
-				<td><font color="red"><span th:if="${#fields.hasErrors('title')}" th:errors="*{title}">title의 에러 메시지</span></font></td>
 			</tr>
 			<tr>
-				<td>Writer</td>
+				<td>글쓴이</td>
 				<td><input type="text" name="writer" th:field="*{writer}" readonly="readonly" /></td>
-				<td><font color="red"><span th:if="${#fields.hasErrors('writer')}" th:errors="*{writer}">writer의 에러 메시지</span></font></td>
 			</tr>
 			<tr>
-				<td>Content</td>
-				<td><textarea name="content" th:field="*{content}"></textarea></td>
-				<td><font color="red"><span th:if="${#fields.hasErrors('content')}" th:errors="*{content}">content의 에러 메시지</span></font></td>
+				<td>내용</td>
+				<td><textarea name="content" th:field="*{content}" rows="20" cols="100"></textarea></td>
 			</tr>			
 		</table>	
 	</form>	
